@@ -138,7 +138,6 @@ zplug load
 if zplug check "zsh-users/zsh-syntax-highlighting"; then
     # To have paths colored instead of underlined
     ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-    ZSH_HIGHLIGHT_STYLES[command]='none'
 fi
 
 
