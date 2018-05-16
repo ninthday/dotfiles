@@ -72,14 +72,6 @@ set fillchars+=vert:│
 " =================
 
 " ---
-" Nerdtree
-" ---
-" Autoclose when closing last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeMinimalUI=1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-
-" ---
 " Tagbar
 " ---
 let g:tagbar_compact = 1
@@ -252,7 +244,7 @@ vnoremap <C-A> <C-C>:update<CR>
 inoremap <C-A> <C-O>:update<CR>
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
-map <leader>n :NERDTreeToggle<CR>
+"map <leader>n :NERDTreeToggle<CR>
 map <leader>m :TagbarToggle<CR>
 
 map <leader>, :bp!<CR>
