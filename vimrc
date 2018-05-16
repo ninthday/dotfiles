@@ -86,29 +86,6 @@ let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '='
 
 " ---
-" fzf
-" ---
-command! -bang -nargs=* Commits call fzf#vim#commits({'options': '--no-reverse'})
-command! -bang -nargs=* BTags call fzf#vim#buffer_tags('', {'options': '--no-reverse'})
-command! -bang -nargs=* BCommits call fzf#vim#buffer_commits({'options': '--no-reverse'})
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--hidden', {'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all'})
-let g:fzf_colors={
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']
-  \ }
-
-" ---
 " php cs fixer
 " ---
 let g:php_cs_fixer_level = 'psr2'
@@ -193,7 +170,7 @@ vnoremap <C-A> <C-C>:update<CR>
 inoremap <C-A> <C-O>:update<CR>
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
-"map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 map <leader>m :TagbarToggle<CR>
 
 map <leader>, :bp!<CR>
