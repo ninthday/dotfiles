@@ -236,6 +236,11 @@ set shiftwidth=2
 set clipboard=unnamed
 set term=screen-256color
 
+" ========== Custom Settings ==========
+if filereadable(expand("~/.dotfiles/vim/settings.vim"))
+    source ~/.dotfiles/vim/settings.vim
+endif
+
 " ---
 " Post Load Fixes
 " ---
@@ -253,12 +258,10 @@ autocmd VimEnter * call CorrectColorScheme()
 let mapleader=","
 let g:mapleader=","
 
-" Learn it the hard way
-"nmap <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-
+"Quicksave command
+noremap <C-A> :update<CR>
+vnoremap <C-A> <C-C>:update<CR>
+inoremap <C-A> <C-O>:update<CR>
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
 map <leader>n :NERDTreeToggle<CR>
