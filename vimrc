@@ -51,7 +51,7 @@ Plug 'ryanoasis/vim-devicons'   "Adds file type glyphs/icons to popular Vim plug
 Plug 'rking/ag.vim'             "Vim plugin for the_silver_searcher
 "Plug 'rizzatti/dash.vim'        "Search Dash.app from Vim
 Plug 'majutsushi/tagbar'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer' }
 
 call plug#end()
 
@@ -254,10 +254,10 @@ let mapleader=","
 let g:mapleader=","
 
 " Learn it the hard way
-nmap <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"nmap <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 map <leader>l :set list!<CR>
 map <leader>w :set wrap!<CR>
