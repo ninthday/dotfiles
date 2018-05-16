@@ -34,13 +34,16 @@ Plug 'wavded/vim-stylus'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'junegunn/vim-easy-align'  "vim alignment plugin
+Plug 'SirVer/ultisnips'         "the ultimate snippet solution for Vim
+Plug 'honza/vim-snippets'       "snippets files for various programming languages
 "Plug 'Shougo/denite.nvim'
 "Plug 'Shougo/vimfiler.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'     "a solid language pack for Vim
+"Plug 'tpope/vim-fugitive'      "the best Git wrapper of all time
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'easymotion/vim-easymotion'
-Plug 'mhinz/vim-startify'       " The fancy start screen for Vim
+Plug 'mhinz/vim-startify'       "The fancy start screen for Vim
 "Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'   "shows a git diff in the gutter and stages/undoes hunks
 Plug 'Chiel92/vim-autoformat'   "Provide easy code formatting in Vim
