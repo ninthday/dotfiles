@@ -94,53 +94,65 @@ let g:php_cs_fixer_enable_default_mapping = 0
 " =================
 " Settings
 " =================
-set hidden
-set mouse=a
+set nocompatible
+set encoding=utf-8          " Set default encoding to utf-8
 
-"set nowrap        " don't wrap lines
-set backspace=indent,eol,start
+set hidden         " current buffer unsaved changes
+set mouse=v        " copy-paste
 
-" allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set shiftwidth=2  " number of spaces to use for autoindenting
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-" case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-" shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
+set nowrap        " don't wrap lines
+set backspace=indent,eol,start    " make backspace work like most other programs
 
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " don't beep
-
-set nobackup
+" ========== Turn Off Swap Files ==========
 set noswapfile
+set nobackup
+set nowb
 
+" ========== TABs and spaces ==========
+set tabstop=4     " tabs are at proper location
+set softtabstop=4
+set shiftwidth=4  " number of spaces to use for autoindenting
+set expandtab     " don't use actual tab character
+
+" ========== Code Folding ==========
+set foldmethod=indent
+set foldlevel=99
+
+" ========== Scrolling ==========
+set scrolloff=3		"  the number of context lines to see above and below the cursor
+" set sidescrolloff=15
+" set sidescroll=1
+
+" ========== Indentation ==========
+set autoindent		" automatic indentation
+set copyindent    " copy the previous indentation on autoindenting
+set smartindent		" for c like language
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 filetype plugin indent on
 
+" ========== Search ==========
+" Make search case insensitive
+set incsearch     " show search matches as you type
+set hlsearch      " highlight search terms
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+
+
+" ========== General Config ==========
+set clipboard=unnamed    " System clipboard
+set showmatch     " set show matching parenthesis
+set history=500         " remember more commands and search history
+set undolevels=500      " use many muchos levels of undo
+set number        " always show line numbers
+set relativenumber          " Relative line numbers
+set title                " change the terminal's title
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set term=xterm-256color
 set listchars=tab:›\ ,eol:¬   " Use the same symbols as TextMate for tabstops and EOLs
-
-syntax enable
-set nocompatible
-
-" Tab behavior
-set smarttab
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-" Other
-set clipboard=unnamed
-set term=screen-256color
+if !exists("g:syntax_on")
+    syntax enable        " highlight syntax
+endif
 
 " ========== Custom Settings ==========
 if filereadable(expand("~/.dotfiles/vim/settings.vim"))
@@ -161,7 +173,7 @@ autocmd VimEnter * call CorrectColorScheme()
 " ---
 " Mappings
 " ---
-let mapleader=","
+let mapleader=","  " Rebind <Leader> key
 let g:mapleader=","
 
 "Quicksave command
@@ -182,6 +194,8 @@ nnoremap <leader>gs :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+
+nnoremap <space> za    " Enable folding with the spacebar
 
 nmap <silent> <leader>d <Plug>DashSearch
 
