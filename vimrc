@@ -148,7 +148,7 @@ set number        " always show line numbers
 set relativenumber          " Relative line numbers
 set title                " change the terminal's title
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set term=screen-256color
+set term=xterm-256color
 set listchars=tab:›\ ,eol:¬   " Use the same symbols as TextMate for tabstops and EOLs
 if !exists("g:syntax_on")
     syntax enable        " highlight syntax
