@@ -1,6 +1,10 @@
 # :: Zplug - ZSH plugin manager
 export ZPLUG_HOME=$HOME/.zplug
 
+# Locale settings (utf-8)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Check if zplug is installed
 if [[ ! -d $ZPLUG_HOME ]]; then
   #git clone https://github.com/zplug/zplug $ZPLUG_HOME
