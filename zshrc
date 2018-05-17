@@ -147,3 +147,5 @@ alias ll="ls -alF"
 alias kk="k -a"
 alias c="clear"
 alias td="todo.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
