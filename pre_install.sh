@@ -2,4 +2,4 @@
 
 set -e
 
-sudo apt install -y build-essential cmake tmux python3-dev
+sudo apt install -y build-essential cmake tmux python3-dev curl
