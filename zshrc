@@ -66,6 +66,8 @@ zplug "supercrabtree/k"
 # Tips for aliases
 zplug "djui/alias-tips"
 
+# python-poetry
+zplug "darvid/zsh-poetry"
 
 # Load theme
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
@@ -105,7 +107,7 @@ POWERLEVEL9K_NODE_VERSION_FOREGROUND="white"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
 
 # User configuration
-export PATH="$HOME/.dotfiles/bin:$HOME/.bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PATH"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export TERM="xterm-256color"
