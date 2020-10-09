@@ -34,6 +34,7 @@ Plug 'wavded/vim-stylus'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'editorconfig/editorconfig-vim'    "formating with editorconfig file
 Plug 'junegunn/vim-easy-align'  "vim alignment plugin
 Plug 'SirVer/ultisnips'         "the ultimate snippet solution for Vim
 Plug 'honza/vim-snippets'       "snippets files for various programming languages
