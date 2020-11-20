@@ -106,8 +106,11 @@ POWERLEVEL9K_NODE_VERSION_FOREGROUND="white"
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+
 # User configuration
-export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PYENV_ROOT/bin:$PATH"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export TERM="xterm-256color"
@@ -155,3 +158,8 @@ alias c="clear"
 alias python="python3"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Pyenv initialize
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
