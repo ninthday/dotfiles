@@ -72,6 +72,9 @@ zplug "darvid/zsh-poetry"
 # Load theme
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
+# Prompt at the bottom of the terminal
+printf '\n%.0s' {1..100}
+
 # Theme setup
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
