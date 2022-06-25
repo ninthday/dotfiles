@@ -1,16 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # :: Zplug - ZSH plugin manager
 export ZPLUG_HOME=$HOME/.zplug
-
-# Locale settings (utf-8)
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 # Check if zplug is installed
 if [[ ! -d $ZPLUG_HOME ]]; then
@@ -87,17 +76,6 @@ zplug romkatv/powerlevel10k, as:theme, depth:1
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-
-# User configuration
-export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PYENV_ROOT/bin:$PATH"
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-export TERM="xterm-256color"
-[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="tuvix"
-export KEYTIMEOUT=1
-
 # Findfile and find content
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
@@ -121,14 +99,31 @@ fi
 # Load everything
 zplug load
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if zplug check "zsh-users/zsh-syntax-highlighting"; then
     # To have paths colored instead of underlined
     ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 fi
 
 # Prompt at the bottom of the terminal
-printf '\n%.0s' {1..100}
+# printf '\n%.0s' {1..100}
 
+# User configuration
+export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PATH"
+export EDITOR='vim'
+export TERM="xterm-256color"
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="tuvix"
+export KEYTIMEOUT=1
+
+# Locale settings (utf-8)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # :: Aliases and functions
 alias ls="ls --color=auto"
@@ -140,9 +135,9 @@ alias python="python3"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Pyenv initialize
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
