@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # :: Zplug - ZSH plugin manager
 export ZPLUG_HOME=$HOME/.zplug
 
@@ -70,42 +77,14 @@ zplug "djui/alias-tips"
 zplug "darvid/zsh-poetry"
 
 # Load theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug romkatv/powerlevel10k, as:theme, depth:1
 
 # Prompt at the bottom of the terminal
 printf '\n%.0s' {1..100}
 
 # Theme setup
-#POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=false
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❱ "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status docker_machine virtualenv background_jobs time history)
-POWERLEVEL9K_DISABLE_RPROMPT=false
-POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=false
-
-POWERLEVEL9K_STATUS_VERBOSE=true
-POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=false
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-
-POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND="black"
-POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="blue"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND="black"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND="yellow"
-POWERLEVEL9K_STATUS_ERROR_FOREGROUND="black"
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
-POWERLEVEL9K_STATUS_OK_FOREGROUND="black"
-POWERLEVEL9K_STATUS_OK_BACKGROUND="green"
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="yellow"
-POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND="red"
-POWERLEVEL9K_NODE_VERSION_BACKGROUND="red"
-POWERLEVEL9K_NODE_VERSION_FOREGROUND="white"
+# move theme config to p10k.zsh file
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
 
@@ -119,10 +98,6 @@ export EDITOR='vim'
 export TERM="xterm-256color"
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="tuvix"
 export KEYTIMEOUT=1
-
-# Multiline/Singleline
-alias multi_line="export POWERLEVEL9K_PROMPT_ON_NEWLINE=true"
-alias single_line="export POWERLEVEL9K_PROMPT_ON_NEWLINE=false"
 
 # Findfile and find content
 function f() { find . -iname "*$1*" ${@:2} }
@@ -171,3 +146,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
