@@ -60,6 +60,8 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/composer", from:oh-my-zsh
 #--增加Laravel的指令提示
 zplug "plugins/laravel5", from:oh-my-zsh
+#--Laravel Artisan 指令
+zplug "jessarcher/zsh-artisan"
 
 #--超強cd指令補完工具
 zplug "b4b4r07/enhancd", use:init.sh
