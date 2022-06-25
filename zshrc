@@ -82,9 +82,6 @@ zplug "darvid/zsh-poetry"
 # zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
-# Prompt at the bottom of the terminal
-printf '\n%.0s' {1..100}
-
 # Theme setup
 # move theme config to p10k.zsh file
 
@@ -128,6 +125,9 @@ if zplug check "zsh-users/zsh-syntax-highlighting"; then
     # To have paths colored instead of underlined
     ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 fi
+
+# Prompt at the bottom of the terminal
+printf '\n%.0s' {1..100}
 
 
 # :: Aliases and functions
