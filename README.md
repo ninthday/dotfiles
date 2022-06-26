@@ -46,3 +46,7 @@ If you want Fix prompt at the bottom of the terminal window, UnComment this line
 # Prompt at the bottom of the terminal
 # printf '\n%.0s' {1..100}
 ```
+
+### Midify Banner
+Change content in banner file.
+

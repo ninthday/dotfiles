@@ -1,0 +1,7 @@
+echo "                    ▄▀▄     ▄▀▄       "
+echo "                   ▄█░░▀▀▀▀▀░░█▄      "
+echo "               ▄▄  █░░░░░░░░░░░█  ▄▄  "
+echo "              █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█ "
+
+figlet "Hello "${(C)USER}
+screenfetch -n -d '-pkgs,shell,res,de,wm,wmtheme,gtk'
