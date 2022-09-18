@@ -21,6 +21,7 @@ zplug "modules/utility",    from:prezto
 zplug "modules/terminal",   from:prezto
 zplug "modules/editor",     from:prezto
 zplug "modules/directory",  from:prezto
+zplug "modules/node",       from:prezto
 zplug "modules/completion", from:prezto
 
 # zsh users
