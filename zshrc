@@ -116,7 +116,7 @@ fi
 # printf '\n%.0s' {1..100}
 
 # User configuration
-export PATH="$HOME/.dotfiles/bin:$HOME/.poetry/bin:$HOME/.bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$HOME/.local/bin:$HOME/.bin:/usr/local/bin:$PATH"
 export EDITOR='vim'
 export TERM="xterm-256color"
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="tuvix"
