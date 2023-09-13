@@ -132,6 +132,7 @@ alias ll="ls -alF"
 alias kk="k -a"
 alias c="clear"
 alias python="python3"
+alias sail="[ -f sail ] && sh sail || sh vendor/bin/sail"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
