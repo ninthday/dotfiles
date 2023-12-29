@@ -64,6 +64,7 @@ call plug#end()
 let g:neodark#use_256color = 1 " default: 0
 "use default terminal background
 let g:neodark#terminal_transparent = 1 "default: 0
+set termguicolors
 colorscheme neodark
 
 set fillchars+=vert:│
