@@ -153,5 +153,11 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Enable Poetry tab completion for
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # Enables zsh completion for gcloud.
 source /usr/share/google-cloud-sdk/completion.zsh.inc
+# Autocompletion for uv commands
+eval "$(uv generate-shell-completion zsh)"
