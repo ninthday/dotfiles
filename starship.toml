@@ -4,9 +4,9 @@ format = """
 [](red)\
 $os\
 $username\
-[](bg:peach fg:red)\
+[](fg:red bg:peach)\
 $directory\
-[](bg:yellow fg:peach)\
+[](fg:peach bg:yellow)\
 $git_branch\
 $git_status\
 [](fg:yellow bg:green)\
@@ -20,6 +20,8 @@ $kotlin\
 $haskell\
 $python\
 [](fg:green bg:sapphire)\
+$docker_context\
+$gcloud\
 $conda\
 [](fg:sapphire bg:lavender)\
 $time\
@@ -84,12 +86,12 @@ style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
 [c]
-symbol = " "
+symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
@@ -109,7 +111,7 @@ style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
@@ -133,8 +135,14 @@ symbol = ""
 style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
+[gcloud]
+symbol = "🅶"
+style = "bg:sapphire"
+format = '[[ $symbol( $project) ](fg:crust bg:sapphire)]($style)'
+detect_env_vars = ["CLOUDSDK_CORE_PROJECT","STARSHIP_GCLOUD_ACTIVE"]
+
 [conda]
-symbol = "  "
+symbol = ""
 style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
@@ -146,7 +154,7 @@ style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
@@ -158,11 +166,11 @@ vimcmd_replace_symbol = '[❮](bold fg:lavender)'
 vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
-show_milliseconds = true
+show_milliseconds = false
 format = " in $duration "
 style = "bg:lavender"
 disabled = false
-show_notifications = true
+show_notifications = false
 min_time_to_notify = 45000
 
 [palettes.catppuccin_mocha]

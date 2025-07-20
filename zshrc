@@ -110,9 +110,6 @@ if zplug check "zsh-users/zsh-syntax-highlighting"; then
     ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 fi
 
-# Prompt at the bottom of the terminal
-# printf '\n%.0s' {1..100}
-
 # User configuration
 export PATH="$HOME/.dotfiles/bin:$HOME/.local/bin:$HOME/.bin:/usr/local/bin:$PATH"
 export EDITOR='vim'
@@ -161,6 +158,17 @@ autoload -Uz compinit && compinit
 
 # Enables zsh completion for gcloud.
 source /usr/share/google-cloud-sdk/completion.zsh.inc
+# Show Starship gcloud module
+function gcloud_show() {
+    export STARSHIP_GCLOUD_ACTIVE=true
+    echo "● Starship gcloud SHOW"
+}
+
+# Hide Starship gcloud module
+function gcloud_hide() {
+    unset STARSHIP_GCLOUD_ACTIVE
+    echo "◯ Starship gcloud HIDE"
+}
 
 # Autocompletion for uv commands
 eval "$(uv generate-shell-completion zsh)"
