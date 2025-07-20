@@ -17,3 +17,6 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 # Install for banner when new terminal
 sudo apt install figlet screenfetch
+
+# Install Starship (Cross-shell Prompt)
+curl -sS https://starship.rs/install.sh | sh

@@ -68,12 +68,9 @@ zplug "djui/alias-tips"
 # python-poetry
 zplug "darvid/zsh-poetry"
 
-# Load theme
-# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug romkatv/powerlevel10k, as:theme, depth:1
-
-# Theme setup
-# move theme config to p10k.zsh file
+# Tuvix@20250720: Powerlevel10k stop update 
+# Load p10k theme
+# zplug romkatv/powerlevel10k, as:theme, depth:1
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
 
@@ -100,12 +97,13 @@ fi
 # Load everything
 zplug load
 
+# Tuvix@20250720: Powerlevel10k stop update 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 if zplug check "zsh-users/zsh-syntax-highlighting"; then
     # To have paths colored instead of underlined
@@ -150,8 +148,12 @@ if [ -f ~/.dotfiles/banner ]; then
     source ~/.dotfiles/banner
 fi
 
+# Tuvix@20250720: Powerlevel10k stop update 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Setup zsh to use Starship
+eval "$(starship init zsh)"
 
 # Enable Poetry tab completion for
 fpath+=~/.zfunc
@@ -159,5 +161,6 @@ autoload -Uz compinit && compinit
 
 # Enables zsh completion for gcloud.
 source /usr/share/google-cloud-sdk/completion.zsh.inc
+
 # Autocompletion for uv commands
 eval "$(uv generate-shell-completion zsh)"
