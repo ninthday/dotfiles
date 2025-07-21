@@ -90,6 +90,7 @@ format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [git_metrics]
 disabled = false
+only_nonzero_diffs = true
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [nodejs]
