@@ -27,6 +27,7 @@ $conda\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
+$git_metrics\
 $line_break\
 $character"""
 
@@ -66,6 +67,7 @@ format = '[ $user]($style)'
 [directory]
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
+read_only = ""
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -84,6 +86,10 @@ format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 [git_status]
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[git_metrics]
+disabled = false
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [nodejs]
 symbol = ""
