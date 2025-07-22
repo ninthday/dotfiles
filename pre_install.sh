@@ -15,6 +15,9 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 # Install Poetry (Python)
 curl -sSL https://install.python-poetry.org | python3 -
 
+# Install uv (Python)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Install for banner when new terminal
 sudo apt install figlet screenfetch
 
