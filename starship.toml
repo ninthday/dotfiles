@@ -98,6 +98,7 @@ format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+not_capable_style = "bg:green fg:red"
 
 [c]
 symbol = ""
