@@ -15,6 +15,7 @@ $rust\
 $golang\
 $nodejs\
 $php\
+${custom.laravel}\
 $java\
 $kotlin\
 $haskell\
@@ -180,6 +181,31 @@ style = "bg:lavender"
 disabled = false
 show_notifications = false
 min_time_to_notify = 45000
+
+[custom.laravel]
+command = '''
+dir=`pwd`;
+while [ "$dir" != "/" ] ; do
+    if  [[ -f "$dir/artisan" && -f "$dir/composer.lock" ]]; then
+        grep '\"name\": \"laravel/framework\"' -A1 "$dir/composer.lock" | tail -n 1 | awk -F '\"' '{print $4}'
+        exit 0
+    fi
+    dir=`dirname "$dir"`;
+done
+exit 1'''
+when = '''
+dir=`pwd`;
+while [ "$dir" != "/" ] ; do
+    if  [[ -f "$dir/artisan" && -f "$dir/composer.lock" ]]; then
+        exit 0
+    fi
+    dir=`dirname "$dir"`;
+done
+exit 1'''
+description = "The version of Laravel used by the current project"
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $output) ](fg:crust bg:green)]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
