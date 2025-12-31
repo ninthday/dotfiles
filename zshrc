@@ -122,8 +122,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # :: Aliases and functions
-alias ls="ls --color=auto"
-alias ll="ls -alF"
+alias ls="lsd"
+alias la="lsd -A"
+alias ll="lsd -alF"
+alias llg="lsd -l --header --git"
+alias lls="lsd -alF --sizesort"
+alias llt="lsd -alF --timesort"
 alias kk="k -a"
 alias c="clear"
 alias python="python3"

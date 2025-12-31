@@ -4,10 +4,13 @@ set -e
 
 sudo apt install -y build-essential cmake tmux python3-dev curl gawk
 
-# install exfat support
+# Install exfat support
 # exfat-utils has been replaced by exfatprogs in Ubuntu 22.04 and later.
 # sudo apt install exfat-fuse exfat-utils
 sudo apt install exfat-fuse exfatprogs
+
+# Install LSD (LSDeluxe)-enhanced ls command 
+sudo apt install lsd
 
 # Checkout pyenv from GitHub
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
