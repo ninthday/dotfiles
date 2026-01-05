@@ -68,6 +68,9 @@ zplug "djui/alias-tips"
 # python-poetry
 zplug "darvid/zsh-poetry"
 
+# python-uv
+zplug "matthiasha/zsh-uv-env", from:oh-my-zsh
+
 # Tuvix@20250720: Powerlevel10k stop update 
 # Load p10k theme
 # zplug romkatv/powerlevel10k, as:theme, depth:1
