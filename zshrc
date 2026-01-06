@@ -69,7 +69,7 @@ zplug "djui/alias-tips"
 zplug "darvid/zsh-poetry"
 
 # python-uv
-zplug "matthiasha/zsh-uv-env", from:oh-my-zsh
+zplug "matthiasha/zsh-uv-env"
 
 # Tuvix@20250720: Powerlevel10k stop update 
 # Load p10k theme
