@@ -135,6 +135,7 @@ alias kk="k -a"
 alias c="clear"
 alias python="python3"
 alias sail="[ -f sail ] && sh sail || sh vendor/bin/sail"
+alias agyy="agy --dangerously-skip-permissions --sandbox"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -155,6 +156,9 @@ fi
 # Tuvix@20250720: Powerlevel10k stop update 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# 禁止 venv activate 修改 prompt（讓 Starship 自己處理）
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Setup zsh to use Starship
 eval "$(starship init zsh)"
@@ -179,3 +183,7 @@ function gcloud_hide() {
 
 # Autocompletion for uv commands
 eval "$(uv generate-shell-completion zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="$HOME/.local/bin:$PATH"
