@@ -136,6 +136,7 @@ alias c="clear"
 alias python="python3"
 alias sail="[ -f sail ] && sh sail || sh vendor/bin/sail"
 alias agyy="agy --dangerously-skip-permissions --sandbox"
+alias gla="git log --oneline --graph --all"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
