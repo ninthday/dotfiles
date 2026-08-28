@@ -158,12 +158,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# 禁止 venv activate 修改 prompt（讓 Starship 自己處理）
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-# Setup zsh to use Starship
-eval "$(starship init zsh)"
-
 # Enable Poetry tab completion for
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
@@ -188,3 +182,10 @@ eval "$(uv generate-shell-completion zsh)"
 
 # Added by Antigravity CLI installer
 export PATH="$HOME/.local/bin:$PATH"
+
+# 禁止 venv activate 修改 prompt（讓 Starship 自己處理）
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Setup zsh to use Starship
+# MUST keep in last line of .zshrc file
+eval "$(starship init zsh)"
