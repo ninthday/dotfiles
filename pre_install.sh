@@ -26,3 +26,16 @@ sudo apt install figlet screenfetch
 
 # Install Starship (Cross-shell Prompt)
 curl -sS https://starship.rs/install.sh | sh
+
+# Install JSON and YAML processors
+sudo apt install jq yq
+
+# Install ripgrep (fast search tool)
+sudo apt install ripgrep
+
+# Install fd (fast alternative to find)
+sudo apt install fd-find
+ln -s $(which fdfind) ~/.local/bin/fd
+
+# Install tree (directory listing tool)
+sudo apt install tree
